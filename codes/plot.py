@@ -120,8 +120,7 @@ def make_plot(movie_df, genre='Action'):
 
     # get information from the 30 most productive directors in the selected genre
     top_director, top_df = get_top_df(genre)
-    brush = alt.selection(type='multi', fields=['Director'], init={
-                          'Director': top_director.iloc[0, 0]})
+    brush = alt.selection_multi(fields=['Director'], empty='none')
 
     # plot a bar chart of the top 30 most productive directors in the selected genre
     chart_1 = alt.Chart(top_director).mark_bar().encode(

@@ -24,7 +24,7 @@ genres = movie_df.Major_Genre.unique()
 directors = movie_df.Director.unique()
 
 # Set up the app header
-jumbotron = dbc.Jumbotron([
+jumbotron = html.Div(
     dbc.Container([
         html.Div(
             # Set up the app title
@@ -73,8 +73,6 @@ jumbotron = dbc.Jumbotron([
     ],
         fluid=True,
     )
-],
-    fluid=True,
 )
 
 # Set up the function instrution
